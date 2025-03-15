@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Miracurall Consultancy Services</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/modern-style.css">
+    <link rel="stylesheet" href="../css/blog-style.css">
+    <style>
+        /* Career Page Specific Styles */
+        .career-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 100px 0 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .career-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .career-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .job-listings {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .job-details {
+            margin-bottom: 1.5rem;
+            color: #64748b;
+        }
+
+        .job-details i {
+            margin-right: 0.5rem;
+            color: #2563eb;
+        }
+
+        .job-requirements {
+            margin: 1.5rem 0;
+        }
+
+        .job-requirements h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .job-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-requirements li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-requirements li:before {
+            content: "•";
+            color: #2563eb;
+            position: absolute;
+            left: 0;
+        }
+
+        .application-form {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .file-upload {
+            border: 2px dashed #e2e8f0;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .file-upload:hover {
+            border-color: #2563eb;
+        }
+
+        .file-upload i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .terms-checkbox input {
+            margin-top: 0.25rem;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+
+        .submit-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .career-hero h1 {
+                font-size: 2rem;
+            }
+
+            .career-hero p {
+                font-size: 1rem;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">MiraCurall</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                <li><a href="../index.html#services" class="nav-link">Services</a></li>
+                <li><a href="../blog/index.html" class="nav-link">Blog</a></li>
+                <li><a href="index.html" class="nav-link active">Careers</a></li>
+                <li><a href="../contact/index.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Career Hero Section -->
+    <section class="career-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Join Our Team</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Be part of an innovative team that's shaping the future of digital solutions. We're looking for passionate individuals who want to make a difference.</p>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="job-listings">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Current Openings</h2>
+            
+            <!-- Junior Web Developer -->
+            <div class="job-card" data-aos="fade-up">
+                <h3 class="job-title">Junior Web Developer</h3>
+                <div class="job-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Purba Medinipur, West Bengal (Hybrid)</p>
+                    <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    <p><i class="fas fa-graduation-cap"></i> Bachelor's degree in Computer Science or related field</p>
+                </div>
+                <div class="job-requirements">
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>Proficiency in HTML5, CSS3, and JavaScript</li>
+                        <li>Experience with responsive design and mobile-first approach</li>
+                        <li>Basic understanding of version control (Git)</li>
+                        <li>Knowledge of modern frontend frameworks (React/Vue/Angular)</li>
+                        <li>Strong problem-solving skills</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEO Specialist -->
+            <div class="job-card" data-aos="fade-up">
+                <h3 class="job-title">SEO Specialist</h3>
+                <div class="job-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Purba Medinipur, West Bengal (Hybrid)</p>
+                    <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    <p><i class="fas fa-graduation-cap"></i> Bachelor's degree in Marketing or related field</p>
+                </div>
+                <div class="job-requirements">
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>2+ years of SEO experience</li>
+                        <li>Proficiency in SEO tools (Google Analytics, Search Console, etc.)</li>
+                        <li>Understanding of technical SEO principles</li>
+                        <li>Content optimization expertise</li>
+                        <li>Experience with keyword research and analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Associate -->
+            <div class="job-card" data-aos="fade-up">
+                <h3 class="job-title">Digital Marketing Associate</h3>
+                <div class="job-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Purba Medinipur, West Bengal (Hybrid)</p>
+                    <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    <p><i class="fas fa-graduation-cap"></i> Bachelor's degree in Marketing or related field</p>
+                </div>
+                <div class="job-requirements">
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>Experience with social media marketing</li>
+                        <li>Knowledge of email marketing campaigns</li>
+                        <li>Understanding of PPC advertising</li>
+                        <li>Content creation skills</li>
+                        <li>Analytics and reporting experience</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Backend Developer -->
+            <div class="job-card" data-aos="fade-up">
+                <h3 class="job-title">Backend Developer</h3>
+                <div class="job-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Purba Medinipur, West Bengal (Hybrid)</p>
+                    <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    <p><i class="fas fa-graduation-cap"></i> Bachelor's degree in Computer Science or related field</p>
+                </div>
+                <div class="job-requirements">
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>Proficiency in PHP/Python/Node.js</li>
+                        <li>Experience with databases (MySQL, MongoDB)</li>
+                        <li>API development experience</li>
+                        <li>Understanding of server architecture</li>
+                        <li>Knowledge of security best practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Accountant -->
+            <div class="job-card" data-aos="fade-up">
+                <h3 class="job-title">Accountant</h3>
+                <div class="job-details">
+                    <p><i class="fas fa-map-marker-alt"></i> Purba Medinipur, West Bengal (Hybrid)</p>
+                    <p><i class="fas fa-briefcase"></i> Full-time</p>
+                    <p><i class="fas fa-graduation-cap"></i> Bachelor's degree in Accounting or related field</p>
+                </div>
+                <div class="job-requirements">
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>Experience with financial reporting</li>
+                        <li>Knowledge of accounting software</li>
+                        <li>Understanding of tax regulations</li>
+                        <li>Attention to detail</li>
+                        <li>Strong analytical skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-form">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Apply Now</h2>
+            <div class="form-container" data-aos="fade-up">
+                <form id="career-form" onsubmit="return validateForm(event)">
+                    <div class="form-group">
+                        <label for="position">Position Applied For*</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select Position</option>
+                            <option value="junior-web-developer">Junior Web Developer</option>
+                            <option value="seo-specialist">SEO Specialist</option>
+                            <option value="digital-marketing-associate">Digital Marketing Associate</option>
+                            <option value="backend-developer">Backend Developer</option>
+                            <option value="accountant">Accountant</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education">Highest Education*</label>
+                        <input type="text" id="education" name="education" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience</label>
+                        <select id="experience" name="experience" required>
+                            <option value="fresher">Fresher</option>
+                            <option value="0-1">0-1 Year</option>
+                            <option value="1-2">1-2 Years</option>
+                            <option value="2-3">2-3 Years</option>
+                            <option value="3-5">3-5 Years</option>
+                            <option value="5+">5+ Years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF only)*</label>
+                        <div class="file-upload">
+                            <i class="fas fa-file-pdf"></i>
+                            <input type="file" id="resume" name="resume" accept=".pdf" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">Upload Recent Photo (JPG/PNG/JPEG)*</label>
+                        <div class="file-upload">
+                            <i class="fas fa-image"></i>
+                            <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png" required>
+                        </div>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the terms and conditions and consent to the processing of my personal data for recruitment purposes.*</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submit-btn" disabled>Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MiraCurall</h3>
+                    <p>Transforming digital presence with innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#team">Team</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="../index.html#services">Web Design</a></li>
+                        <li><a href="../index.html#services">Graphic Design</a></li>
+                        <li><a href="../index.html#services">GMB Optimization</a></li>
+                        <li><a href="../index.html#services">Social Media Management</a></li>
+                        <li><a href="../index.html#services">Digital Marketing</a></li>
+                        <li><a href="../index.html#services">Business Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/miracurallconsultancy" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/miracurallconsultancy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 MiraCurall Consultancy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/modern-script.js"></script>
+    <script>
+        // Form validation and handling
+        document.getElementById('terms').addEventListener('change', function() {
+            document.getElementById('submit-btn').disabled = !this.checked;
+        });
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            // Resume validation
+            const resume = document.getElementById('resume').files[0];
+            if (resume && resume.type !== 'application/pdf') {
+                alert('Please upload resume in PDF format only');
+                return false;
+            }
+
+            // Photo validation
+            const photo = document.getElementById('photo').files[0];
+            if (photo && !['image/jpeg', 'image/jpg', 'image/png'].includes(photo.type)) {
+                alert('Please upload photo in JPG, JPEG, or PNG format only');
+                return false;
+            }
+
+            // Phone number validation
+            const phone = document.getElementById('phone').value;
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return false;
+            }
+
+            // If all validations pass
+            alert('Application submitted successfully!');
+            document.getElementById('career-form').reset();
+            document.getElementById('submit-btn').disabled = true;
+            return false;
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html> 
