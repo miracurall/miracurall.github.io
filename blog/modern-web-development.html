@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Development Practices - Miracurall Blog</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/modern-style.css">
+    <link rel="stylesheet" href="../css/blog-style.css">
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">MiraCurall</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#team" class="nav-link">Team</a></li>
+                <li><a href="../index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Header -->
+    <header class="blog-post-header">
+        <div class="container">
+            <div class="blog-post-meta" data-aos="fade-up">
+                <div class="category-tag">Web Development</div>
+                <h1>Modern Web Development Practices</h1>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> Jan 12, 2024</span>
+                    <span><i class="far fa-user"></i> By John Doe</span>
+                    <span><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-content">
+        <div class="container">
+            <img src="../img/blog/post1.jpg" alt="Modern Web Development" data-aos="fade-up">
+            
+            <div class="content" data-aos="fade-up">
+                <p>The landscape of web development is constantly evolving, with new technologies and methodologies emerging regularly. In this article, we'll explore the latest practices that are shaping the industry and helping developers create better, more efficient web applications.</p>
+
+                <h2>1. Progressive Web Apps (PWAs)</h2>
+                <p>Progressive Web Apps represent the future of web development, combining the best of web and mobile apps. They offer:</p>
+                <ul>
+                    <li>Offline functionality</li>
+                    <li>Push notifications</li>
+                    <li>Home screen installation</li>
+                    <li>Native app-like experience</li>
+                </ul>
+
+                <h2>2. JAMstack Architecture</h2>
+                <p>JAMstack (JavaScript, APIs, and Markup) has revolutionized how we build and deploy websites. Benefits include:</p>
+                <ul>
+                    <li>Better performance</li>
+                    <li>Higher security</li>
+                    <li>Easier scaling</li>
+                    <li>Better developer experience</li>
+                </ul>
+
+                <h2>3. Responsive Design & Mobile First</h2>
+                <p>With mobile devices accounting for over 50% of web traffic, responsive design is more important than ever. Key considerations include:</p>
+                <ul>
+                    <li>Fluid grids and layouts</li>
+                    <li>Flexible images and media</li>
+                    <li>CSS media queries</li>
+                    <li>Touch-friendly interfaces</li>
+                </ul>
+
+                <blockquote>
+                    "The future of web development lies in creating fast, accessible, and user-friendly experiences across all devices."
+                </blockquote>
+
+                <h2>4. Performance Optimization</h2>
+                <p>Website performance has become a crucial ranking factor and user experience metric. Modern optimization techniques include:</p>
+                <ul>
+                    <li>Code splitting and lazy loading</li>
+                    <li>Image optimization</li>
+                    <li>Caching strategies</li>
+                    <li>CDN utilization</li>
+                </ul>
+            </div>
+
+            <!-- Author Section -->
+            <div class="author-section" data-aos="fade-up">
+                <div class="author-card">
+                    <div class="author-image">
+                        <img src="../img/team/author1.jpg" alt="John Doe">
+                    </div>
+                    <div class="author-info">
+                        <h3>John Doe</h3>
+                        <p>Senior Web Developer at MiraCurall with over 8 years of experience in building modern web applications. Passionate about creating efficient and user-friendly web solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <section class="related-posts">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="blog-card" data-aos="fade-up">
+                        <div class="blog-image">
+                            <img src="../img/blog/related1.jpg" alt="Frontend Development">
+                            <div class="category-tag">Web Development</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Frontend Development Trends</h3>
+                            <p>Explore the latest trends in frontend development...</p>
+                            <a href="frontend-trends.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-aos="fade-up">
+                        <div class="blog-image">
+                            <img src="../img/blog/related2.jpg" alt="Backend Development">
+                            <div class="category-tag">Web Development</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>Backend Development Best Practices</h3>
+                            <p>Learn about modern backend development practices...</p>
+                            <a href="backend-practices.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-hero">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Stay ahead of the curve with our expert insights, industry updates, and exclusive content delivered straight to your inbox.</p>
+                    <ul class="newsletter-features">
+                        <li><i class="fas fa-check"></i> Weekly industry insights</li>
+                        <li><i class="fas fa-check"></i> Latest tech trends</li>
+                        <li><i class="fas fa-check"></i> Expert tips and tutorials</li>
+                        <li><i class="fas fa-check"></i> Exclusive offers and updates</li>
+                    </ul>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Your Interest</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="design">Design</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="subscribe-btn">Subscribe Now</button>
+                    </form>
+                    <p class="form-note">* We respect your privacy. No spam, ever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MiraCurall</h3>
+                    <p>Transforming digital presence with innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#team">Team</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="../index.html#services">Web Design</a></li>
+                        <li><a href="../index.html#services">Graphic Design</a></li>
+                        <li><a href="../index.html#services">GMB Optimization</a></li>
+                        <li><a href="../index.html#services">Social Media Management</a></li>
+                        <li><a href="../index.html#services">Digital Marketing</a></li>
+                        <li><a href="../index.html#services">Business Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/miracurallconsultancy" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/miracurallconsultancy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 MiraCurall Consultancy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/modern-script.js"></script>
+</body>
+</html> 
