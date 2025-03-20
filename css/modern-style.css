@@ -24,12 +24,16 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 /* Navigation */
@@ -103,7 +107,9 @@ body {
 }
 
 .hero-content {
-    max-width: 800px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-content h1 {
@@ -120,7 +126,8 @@ body {
 
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
 }
 
@@ -166,10 +173,11 @@ body {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    flex-direction: column;
+}
+
+.about-text, .about-features {
+    width: 100%;
 }
 
 .about-text p {
@@ -247,17 +255,25 @@ body {
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .social-links a {
-    color: var(--light-text);
-    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    background: #2563eb;
+    transform: translateY(-3px);
 }
 
 /* Works Section */
@@ -307,6 +323,8 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    width: 100%;
+    margin: 0;
 }
 
 .work-card:hover {
@@ -789,4 +807,103 @@ body {
         flex-direction: column;
         gap: 0.5rem;
     }
+}
+
+/* Responsive grid adjustments */
+.works-grid, .team-grid, .blog-preview-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Responsive navigation */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .works-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Make work cards responsive */
+.work-card {
+    width: 100%;
+    margin: 0;
+}
+
+/* Responsive about section */
+.about-content {
+    flex-direction: column;
+}
+
+.about-text, .about-features {
+    width: 100%;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive buttons */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Responsive hero section */
+.hero-content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive about section */
+.about-content {
+    flex-direction: column;
+}
+
+.about-text, .about-features {
+    width: 100%;
 } 
