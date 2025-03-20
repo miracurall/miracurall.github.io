@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Miracurall Consultancy Services</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/modern-style.css">
+    <style>
+        /* Hero Section */
+        .services-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 100px 0 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-grid {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #2563eb;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-features li {
+            color: #475569;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: #1e40af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-hero {
+                padding: 80px 0 60px;
+            }
+
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+        }
+
+        /* Filter Styles */
+        .filter-section {
+            padding: 2rem 0;
+            background: #f8fafc;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: #64748b;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* Contact Form Styles */
+        .contact-section {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-wrapper h2 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-wrapper > p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                padding: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">MiraCurall</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="../about/" class="nav-link">About</a></li>
+                <li><a href="../services/" class="nav-link active">Services</a></li>
+                <li><a href="../blog/" class="nav-link">Blog</a></li>
+                <li><a href="../career/" class="nav-link">Careers</a></li>
+                <li><a href="../contact/" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Services</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Empowering businesses with innovative digital solutions and strategic consulting services to drive growth and success.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Services</button>
+                <button class="filter-btn" data-filter="web">Web Services</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Services Grid Section -->
+    <section class="services-grid">
+        <div class="container">
+            <div class="services-container">
+                <!-- Web Design -->
+                <div class="service-card" data-category="web" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Design & Development</h3>
+                    <p class="service-description">Custom website solutions that drive results.</p>
+                    <ul class="service-features">
+                        <li>Responsive Web Design</li>
+                        <li>E-commerce Development</li>
+                        <li>CMS Integration</li>
+                        <li>Website Maintenance</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="service-card" data-category="marketing" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Digital Marketing</h3>
+                    <p class="service-description">Strategic marketing solutions for growth.</p>
+                    <ul class="service-features">
+                        <li>SEO Optimization</li>
+                        <li>Content Marketing</li>
+                        <li>Email Marketing</li>
+                        <li>PPC Management</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Management -->
+                <div class="service-card" data-category="marketing" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <h3 class="service-title">Social Media Management</h3>
+                    <p class="service-description">Engage your audience across platforms.</p>
+                    <ul class="service-features">
+                        <li>Content Creation</li>
+                        <li>Community Management</li>
+                        <li>Social Media Strategy</li>
+                        <li>Analytics & Reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="service-card" data-category="design" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Graphic Design</h3>
+                    <p class="service-description">Creative visual solutions for your brand.</p>
+                    <ul class="service-features">
+                        <li>Logo Design</li>
+                        <li>Brand Identity</li>
+                        <li>Print Materials</li>
+                        <li>Social Media Graphics</li>
+                    </ul>
+                </div>
+
+                <!-- GMB Optimization -->
+                <div class="service-card" data-category="marketing" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="service-title">GMB Optimization</h3>
+                    <p class="service-description">Improve your local presence.</p>
+                    <ul class="service-features">
+                        <li>Profile Optimization</li>
+                        <li>Local SEO</li>
+                        <li>Review Management</li>
+                        <li>Location Strategy</li>
+                    </ul>
+                </div>
+
+                <!-- Business Consulting -->
+                <div class="service-card" data-category="business" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-title">Business Consulting</h3>
+                    <p class="service-description">Expert guidance for business growth.</p>
+                    <ul class="service-features">
+                        <li>Strategy Development</li>
+                        <li>Process Optimization</li>
+                        <li>Market Analysis</li>
+                        <li>Growth Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <p>Interested in our services? Let's discuss your project.</p>
+                <form class="contact-form" id="serviceContactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="web-design">Web Design</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="social-media">Social Media Management</option>
+                                <option value="gmb">GMB Optimization</option>
+                                <option value="consulting">Business Consulting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MiraCurall</h3>
+                    <p>Transforming digital presence with innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#team">Team</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="../index.html#services">Web Design</a></li>
+                        <li><a href="../index.html#services">Graphic Design</a></li>
+                        <li><a href="../index.html#services">GMB Optimization</a></li>
+                        <li><a href="../index.html#services">Social Media Management</a></li>
+                        <li><a href="../index.html#services">Digital Marketing</a></li>
+                        <li><a href="../index.html#services">Business Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/miracurallconsultancy" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/miracurallconsultancy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 MiraCurall Consultancy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Menu Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    serviceCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('serviceContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
