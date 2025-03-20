@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Miracurall Consultancy Services</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/u/149778741?s=400&u=dcb5b766dfd5e591693fe9424955bd9f0e961a08&v=4">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/modern-style.css">
+    <link rel="stylesheet" href="../css/blog-style.css">
+    <style>
+        /* Hero Section Improvements */
+        /* Career Page Specific Styles */
+        .career-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            padding: 100px 0 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .career-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .career-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        /* About Section Improvements */
+        .about-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            color: #1e40af;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 2px;
+        }
+
+        .about-text h3 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 1.8rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #f8fafc;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: #f0f9ff;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Team Section Improvements */
+        .team-section {
+            padding: 6rem 0;
+            background: #f8fafc;
+            position: relative;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+        }
+
+        .team-section h2 {
+            text-align: center;
+            color: #1e40af;
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .team-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 2px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-image {
+            border-color: #2563eb;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .team-member h3 {
+            color: #1e40af;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .team-member .position {
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .team-member .bio {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 1024px) {
+            .about-content {
+                gap: 3rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .career-hero {
+                padding: 80px 0 60px;
+            }
+
+            .career-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .career-hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-stats {
+                position: static;
+                margin-top: 2rem;
+            }
+
+            .team-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .career-hero h1 {
+                font-size: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .team-member {
+                padding: 1.5rem;
+            }
+
+            .member-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">MiraCurall</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="../about/" class="nav-link">About</a></li>
+                <li><a href="../services/" class="nav-link">Services</a></li>
+                <li><a href="../blog/" class="nav-link">Blog</a></li>
+                <li><a href="../career/" class="nav-link">Careers</a></li>
+                <li><a href="../contact/" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Career Hero Section -->
+    <section class="career-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">About Us</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Be part of an innovative team that's shaping the future of digital solutions. We're looking for passionate individuals who want to make a difference.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" data-aos="fade-up">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>MiraCurall Consultancy Services is a leading digital solutions provider committed to transforming businesses through innovative technology and strategic consulting. Founded with a vision to bridge the gap between traditional business practices and digital excellence, we've been helping organizations achieve their digital transformation goals since our inception.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To empower businesses with cutting-edge digital solutions that drive growth, efficiency, and sustainable success in the modern marketplace.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted partner in digital transformation, known for our innovation, expertise, and commitment to client success.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Team Members</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Our Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQG3rQ9RidK64Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722892871515?e=1747872000&v=beta&t=GkViBAduUbP6XMGrcOHMXOkjAbLCs_RdGJcWslgb4PM" alt="Team Member">
+                    </div>
+                    <h3>Subhankar Das</h3>
+                    <p class="position">CEO & Founder</p>
+                    <p class="bio">With over 15 years of experience in digital transformation and business consulting.</p>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQH1v7o60NHKdw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692859344014?e=1747872000&v=beta&t=lwQWDFK0f7BTjU6jsR4tmZmmpnbIHlRufyGQswSzRf0" alt="Team Member">
+                    </div>
+                    <h3>Mr. Asish Das</h3>
+                    <p class="position">Technical Director</p>
+                    <p class="bio">Expert in web development and digital solutions architecture.</p>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D35AQGJpIwx1Hu_Iw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1664777258810?e=1743062400&v=beta&t=YZ8wb63jXj5vk25BkJVZ5MWzRv9VNDZAnSTO-CWFHOs" alt="Team Member">
+                    </div>
+                    <h3>Sagar Barman</h3>
+                    <p class="position">Marketing Head</p>
+                    <p class="bio">Specialized in digital marketing and brand development strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MiraCurall</h3>
+                    <p>Transforming digital presence with innovative solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#team">Team</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="../index.html#services">Web Design</a></li>
+                        <li><a href="../index.html#services">Graphic Design</a></li>
+                        <li><a href="../index.html#services">GMB Optimization</a></li>
+                        <li><a href="../index.html#services">Social Media Management</a></li>
+                        <li><a href="../index.html#services">Digital Marketing</a></li>
+                        <li><a href="../index.html#services">Business Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/miracurallconsultancy" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com/MiracurallCS" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/miracurallconsultancy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 MiraCurall Consultancy Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../js/modern-script.js"></script>
+    <script>
+        // Form validation and handling
+        document.getElementById('terms').addEventListener('change', function() {
+            document.getElementById('submit-btn').disabled = !this.checked;
+        });
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            // Resume validation
+            const resume = document.getElementById('resume').files[0];
+            if (resume && resume.type !== 'application/pdf') {
+                alert('Please upload resume in PDF format only');
+                return false;
+            }
+
+            // Photo validation
+            const photo = document.getElementById('photo').files[0];
+            if (photo && !['image/jpeg', 'image/jpg', 'image/png'].includes(photo.type)) {
+                alert('Please upload photo in JPG, JPEG, or PNG format only');
+                return false;
+            }
+
+            // Phone number validation
+            const phone = document.getElementById('phone').value;
+            if (!/^\d{10}$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return false;
+            }
+
+            // If all validations pass
+            alert('Application submitted successfully!');
+            document.getElementById('career-form').reset();
+            document.getElementById('submit-btn').disabled = true;
+            return false;
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html> 
